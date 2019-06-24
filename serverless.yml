@@ -1,0 +1,23 @@
+service: aws-nodejs1 
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+
+functions:
+  furnitures:
+    handler: handler.furnitures
+    events:
+      - http: GET okinhome/getall
+      - http: POST okinhome/new
+      - http: DELETE okinhome/deleteone
+      - http: PUT okinhome/deviceoff
+      - http: PUT okinhome/deviceon
+  myAlexa:
+    handler: handler.myAlexa
+    events:
+      - alexaSkill
+
+ 
+
